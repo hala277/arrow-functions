@@ -112,8 +112,12 @@ let sum = function(a, b, c, d) {
   return a + b + c + d;
 };
 
+const Newsum =(a, b, c, d) => a + b + c + d;
+  
+
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sum(1, 2, 3, 4));
+ console.log(sum(1, 2, 3, 4));
+ console.log(Newsum(1, 2, 3, 4));
 
 
 let objectLit = function() {
@@ -124,8 +128,17 @@ let objectLit = function() {
   };
 };
 
+let objectLitNew = () => ({
+    
+      key1: 'value1',
+      key2: 'value2',
+      key3: 'value3',
+    });
+
+
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(objectLit());
+ console.log(objectLit());
+ console.log(objectLitNew());
 
 
 let sumAndProduct = function(a, b) {
@@ -134,16 +147,29 @@ let sumAndProduct = function(a, b) {
   return [sum, product];
 };
 
+const sumAndProductNew = (a, b) => {
+    let sum = a + b;
+    let product = a * b;
+    return [sum, product];
+  };
+
+
+
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sumAndProduct(3, 9));
+ console.log(sumAndProduct(3, 9));
+ console.log(sumAndProductNew(3, 9));
 
 
 let message = function(name) {
   return `Hello, ${name}!`;
 };
 
+let messageNew = name =>  `Hello, ${name}!`;
+  
+
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(message('Allie'));
+ console.log(message('Allie'));
+ console.log(messageNew('Allie'));
 
 
 let Student = function(name, age, hometown) {
@@ -152,15 +178,36 @@ let Student = function(name, age, hometown) {
   this.hometown = hometown;
 };
 
-let joe = new Student('Joe', 'Schmoe', 100);
+
+
+let joe = new Student('Joe', 100 ,'Schmoe');
+
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
-// console.log(joe);
+ console.log(joe);
+ 
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
+class Student1{
+    constructor(name, age, hometown){
+        this.name = name;
+        this.age = age;
+        this.hometown = hometown;
+    }
 
+    greeting(){
+        return `Hi, my name is ${this.name}`; 
+    }
+
+    // courseName(){
+    //     return 'This student is enrolled in Code 301.';
+    // }
+}
+// let joe2 = new Student1('Joe', 100 ,'Schmoe',);
+let joe1 = new Student1('Joe', 100 ,'Schmoe');
+console.log(joe1);
 
 Student.prototype.greeting = function() {
   return `Hi, my name is ${this.name}`;
@@ -168,7 +215,9 @@ Student.prototype.greeting = function() {
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
+ console.log(joe.greeting());
+ console.log(joe.greeting());
+
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -178,8 +227,13 @@ Student.courseName = function() {
   return 'This student is enrolled in Code 301.';
 };
 
+Student1.courseName = () => {
+    return 'This student is enrolled in Code 301.';
+  };
+
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+ console.log(Student.courseName());
+ console.log(Student1.courseName());
 
 
 
