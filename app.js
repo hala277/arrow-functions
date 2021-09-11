@@ -216,7 +216,7 @@ Student.prototype.greeting = function() {
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
  console.log(joe.greeting());
- console.log(joe.greeting());
+ console.log(joe1.greeting());
 
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
@@ -244,17 +244,17 @@ Student.prototype.scope = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scope());
+ console.log(joe.scope());
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scopeArrow());
+console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+// Student {name: 'Joe', age: 100, hometown: 'Schmoe'},The value of "this"  is the object in the function
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+// Window {window: Window, self: Window, document: document, name: '', location: Location, …}
 // 3. Explain why "this" is different when an arrow function is used.
-//
+// Depending on the context in which the function is invoked, the "this" keyword has multiple values. Arrow functions, on the other hand, utilize the value of this in their lexical scope.
